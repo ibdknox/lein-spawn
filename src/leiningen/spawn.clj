@@ -1,5 +1,5 @@
 (ns leiningen.spawn
-  (use [leiningen.core :only [read-project]])
+  (:use [leiningen.core :only [read-project]])
   (:require [spawn.core :as spawn-core]))
 
 (defn spawn-project [genome project args]
@@ -8,9 +8,6 @@
  
 (defn spawn 
   "Create and manage noir projects."
-  {:help-arglists '([genome])}
-  ([]
-     (println "Usage: lein spawn genome project-name"))
   ([genome & args] 
    (let [proj (read-project)]
      (spawn-project genome proj args)))) 
