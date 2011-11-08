@@ -8,9 +8,6 @@
  
 (defn spawn 
   "Create and manage noir projects."
-  {:help-arglists '([genome])}
-  ([]
-     (println "Usage: lein spawn genome project-name"))
   ([genome & args] 
    (let [proj (read-project)]
      (spawn-project genome proj args)))) 
